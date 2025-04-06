@@ -1,6 +1,3 @@
-`timescale 1ns / 1ps
-
-
 module Prog_counter (
   input  [5:0] ADR_IN,
   input  clk,
