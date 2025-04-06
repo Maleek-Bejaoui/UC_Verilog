@@ -52,5 +52,6 @@ module tt_um_top (
       .boot(ui_in[1]),
       .data_in()
   );
+    endmodule
 /* verilator lint_on PINCONNECTEMPTY */
 
