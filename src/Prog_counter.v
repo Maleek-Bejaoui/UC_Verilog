@@ -15,7 +15,6 @@ module Prog_counter (
   reg [5:0] n16_q;
 
   assign ADR_OUT = n16_q;
-  assign  carry = 0;
   always @(posedge clk or posedge rst)
     
     if (rst)
