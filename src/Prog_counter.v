@@ -6,7 +6,6 @@ module Prog_counter (
   input  clk,
   input  ce,
   input  rst,
-  input carry,
   input  clear_PC,
   input  load_PC,
   input  enable_PC,
