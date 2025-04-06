@@ -54,7 +54,6 @@ module Control_Unit (
         .ADR_OUT(ADR_OUT),
         .clk(clk),
         .ce(ce),
-        .carry(carry),
         .rst(rst),
         .clear_PC(clear_PC),
         .load_PC(load_PC),
