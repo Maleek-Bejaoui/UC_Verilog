@@ -18,11 +18,11 @@ project:
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
     - "top.v"
-    - "boot_loader.v"
-    - "UART_fifoed_send.v"
-    - "uart_recv.v"
-    - "byte_2_word.v"
-    - "word_2_byte.v"
+    - "Control_Unit.v"
+    - "Ins_register.v"
+    - "Prog_counter.v"
+    - "fsm.v"
+  
     
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
@@ -41,10 +41,10 @@ pinout:
   uo[1]: "uo_out[1]"
   uo[2]: "uo_out[2]"
   uo[3]: "uo_out[3]"
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[4]: "uo_out[4]"
+  uo[5]: "uo_out[5]"
+  uo[6]: "uo_out[6]"
+  uo[7]: "uo_out[7]"
 
   # Bidirectional pins
   uio[0]: ""
