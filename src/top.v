@@ -17,11 +17,14 @@ module tt_um_top (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+
+
+
   // All output pins must be assigned. If not used, assign to 0.
 //  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
     assign uio_out = 0;
     assign uio_oe  = 0;
-    assign uo_out[7:4]  = 4'b0000;
+   // assign uo_out[7:4]  = 4'b0000;
 
     
 
@@ -32,19 +35,22 @@ module tt_um_top (
 
     
    /* verilator lint_off PINCONNECTEMPTY */
-  boot_loader m_boot_loader (
+  Control_Unit m_Control_Unit (
       .rst  (!rst_n),    // Clock input
       .clk  (clk), // Reset input
       .ce (ena),  // 8-bit counter output
 
-      .rx(ui_in[0]),
-      .tx(uo_out[0]),
-      .boot(uo_out[1]),
-      .scan_memory(ui_in[1]),
-      .ram_out(),
-      .ram_rw(uo_out[2]),
-      .ram_enable(uo_out[3]),
-      .ram_in  ()
+      .w_mem(uo_out[0]),
+      .sel_UAL(uo_out[3:1]),
+      .enable_mem(uo_out[4]),
+      .load_carry(uo_out[5]),
+      .load_accu(uo_out[6]),
+      .load_R1(uo_out[7]),
+      .clear_carry(),
+      .adr(),
+      .carry(ui_in[0]),
+      .boot(ui_in[1]),
+      .data_in()
   );
 /* verilator lint_on PINCONNECTEMPTY */
-endmodule
+
